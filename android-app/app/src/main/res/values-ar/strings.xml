@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CoInterpreter</string>
+    <string name="mode_conversation">محادثة</string>
+    <string name="mode_one_way">اتجاه واحد</string>
+    <string name="mode_professional">احترافي</string>
+    <string name="start_interpreting">ابدأ الترجمة الفورية</string>
+    <string name="stop_interpreting">إيقاف</string>
+    <string name="state_ready">جاهز</string>
+    <string name="state_connecting">جارٍ الاتصال…</string>
+    <string name="state_listening">يستمع</string>
+    <string name="state_interpreting">يترجم</string>
+    <string name="state_speaking">يتحدث</string>
+    <string name="state_reconnecting">إعادة الاتصال…</string>
+    <string name="state_offline">غير متصل</string>
+    <string name="state_error">حدث خطأ ما</string>
+    <string name="mic_muted">الميكروفون مكتوم</string>
+    <string name="voice_muted">صوت الترجمة مكتوم</string>
+    <string name="swap_languages">تبديل اللغتين</string>
+    <string name="clear_transcript">مسح النص</string>
+    <string name="save_transcript">حفظ النص</string>
+    <string name="glossary_title">مسرد الجلسة</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="about_title">حول CoInterpreter</string>
+    <string name="privacy_title">الخصوصية</string>
+    <string name="retry">إعادة المحاولة</string>
+</resources>

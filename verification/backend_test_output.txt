@@ -1,0 +1,112 @@
+TAP version 13
+# Subtest: loadConfig applies documented defaults when env vars are absent
+ok 1 - loadConfig applies documented defaults when env vars are absent
+  ---
+  duration_ms: 1.471016
+  type: 'test'
+  ...
+# Subtest: loadConfig never fabricates an API key from other env vars
+ok 2 - loadConfig never fabricates an API key from other env vars
+  ---
+  duration_ms: 0.258844
+  type: 'test'
+  ...
+# Subtest: assertRuntimeConfigForServing throws MissingApiKeyError when no key is configured
+ok 3 - assertRuntimeConfigForServing throws MissingApiKeyError when no key is configured
+  ---
+  duration_ms: 0.425674
+  type: 'test'
+  ...
+# Subtest: assertRuntimeConfigForServing passes silently once a key is present
+ok 4 - assertRuntimeConfigForServing passes silently once a key is present
+  ---
+  duration_ms: 0.387354
+  type: 'test'
+  ...
+# Subtest: mintSessionToken calls the standard client_secrets endpoint for gpt-realtime
+ok 5 - mintSessionToken calls the standard client_secrets endpoint for gpt-realtime
+  ---
+  duration_ms: 1.343281
+  type: 'test'
+  ...
+# Subtest: mintSessionToken calls the dedicated translations endpoint and sets target language for gpt-realtime-translate
+ok 6 - mintSessionToken calls the dedicated translations endpoint and sets target language for gpt-realtime-translate
+  ---
+  duration_ms: 0.341078
+  type: 'test'
+  ...
+# Subtest: mintSessionToken accepts the nested client_secret response shape too
+ok 7 - mintSessionToken accepts the nested client_secret response shape too
+  ---
+  duration_ms: 0.336389
+  type: 'test'
+  ...
+# Subtest: mintSessionToken throws OpenAiGatewayError on a non-2xx upstream response, without leaking the raw body
+ok 8 - mintSessionToken throws OpenAiGatewayError on a non-2xx upstream response, without leaking the raw body
+  ---
+  duration_ms: 0.938285
+  type: 'test'
+  ...
+# Subtest: mintSessionToken throws on a malformed 200 response instead of returning undefined fields
+ok 9 - mintSessionToken throws on a malformed 200 response instead of returning undefined fields
+  ---
+  duration_ms: 0.257601
+  type: 'test'
+  ...
+# Subtest: GET /healthz returns 200 ok without leaking config
+ok 10 - GET /healthz returns 200 ok without leaking config
+  ---
+  duration_ms: 28.073315
+  type: 'test'
+  ...
+# Subtest: POST /v1/session-token returns 200 and never echoes a raw OpenAI API key field
+ok 11 - POST /v1/session-token returns 200 and never echoes a raw OpenAI API key field
+  ---
+  duration_ms: 29.192156
+  type: 'test'
+  ...
+# Subtest: POST /v1/session-token rejects an invalid mode with 400
+ok 12 - POST /v1/session-token rejects an invalid mode with 400
+  ---
+  duration_ms: 19.514387
+  type: 'test'
+  ...
+# Subtest: POST /v1/session-token rejects an unreviewed target language with 400
+ok 13 - POST /v1/session-token rejects an unreviewed target language with 400
+  ---
+  duration_ms: 13.2304
+  type: 'test'
+  ...
+# Subtest: POST /v1/session-token maps an upstream gateway failure to a sanitized 502
+ok 14 - POST /v1/session-token maps an upstream gateway failure to a sanitized 502
+  ---
+  duration_ms: 15.967536
+  type: 'test'
+  ...
+# Subtest: isValidMode accepts only the three documented modes
+ok 15 - isValidMode accepts only the three documented modes
+  ---
+  duration_ms: 0.805017
+  type: 'test'
+  ...
+# Subtest: isValidEngine accepts only the two known OpenAI realtime engines
+ok 16 - isValidEngine accepts only the two known OpenAI realtime engines
+  ---
+  duration_ms: 0.18795
+  type: 'test'
+  ...
+# Subtest: isValidTargetLanguage rejects languages outside the reviewed allow-list
+ok 17 - isValidTargetLanguage rejects languages outside the reviewed allow-list
+  ---
+  duration_ms: 0.120335
+  type: 'test'
+  ...
+1..17
+# tests 17
+# suites 0
+# pass 17
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1394.835731

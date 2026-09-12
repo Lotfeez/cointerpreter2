@@ -1,0 +1,45 @@
+PASS - Idle -> StartRequested -> RequestingPermission (expected=RequestingPermission actual=RequestingPermission)
+PASS - RequestingPermission -> PermissionGranted -> Authenticating (expected=Authenticating actual=Authenticating)
+PASS - Authenticating -> AuthSucceeded -> Connecting (expected=Connecting actual=Connecting)
+PASS - Connecting -> TransportConnected -> Ready (expected=Ready actual=Ready)
+PASS - Ready -> SpeechDetected -> Listening (expected=Listening actual=Listening)
+PASS - Listening -> SpeechEnded -> Interpreting (expected=Interpreting actual=Interpreting)
+PASS - Interpreting -> ResponseAudioStarted -> Speaking (expected=Speaking actual=Speaking)
+PASS - Speaking -> SpeechDetected (barge-in) -> Listening (expected=Listening actual=Listening)
+PASS - Idle + SpeechDetected is illegal (null)
+PASS - Stopped + SpeechEnded is illegal (null)
+PASS - Ready + ResponseAudioStarted is illegal (null)
+PASS - Listening + FatalError -> Error state
+PASS - Error -> StartRequested -> RequestingPermission (recoverable) (expected=RequestingPermission actual=RequestingPermission)
+PASS - Ready + StartRequested is illegal (prevents duplicate session)
+PASS - Ready -> ConnectionLost -> Reconnecting (expected=Reconnecting actual=Reconnecting)
+PASS - Reconnecting -> ConnectionRestored -> Ready (expected=Ready actual=Ready)
+PASS - Reconnecting -> ReconnectExhausted -> Error
+PASS - isSessionActive(Idle) == false
+PASS - isSessionActive(Listening) == true
+PASS - isSessionActive(Speaking) == true
+PASS - isSessionActive(Stopped) == false
+PASS - Constitution explicitly forbids answering instead of translating
+PASS - Constitution forbids joining the conversation
+PASS - Constitution forbids adding facts
+PASS - Constitution requires preserving numbers/dates/names
+PASS - Constitution mentions both active languages
+PASS - Professional Mode addendum present
+PASS - Empty glossary produces no section (avoids wasted tokens)
+PASS - Glossary section contains first entry
+PASS - Glossary section contains second entry
+PASS - Glossary section is marked as guidance, not spoken content
+PASS - Full instructions include glossary terms when present
+PASS - Arabic is RTL
+PASS - English is LTR
+PASS - French is LTR
+PASS - byCode(ar) resolves to Arabic (expected=Language(code=ar, englishName=Arabic, nativeName=???????, isRtl=true) actual=Language(code=ar, englishName=Arabic, nativeName=???????, isRtl=true))
+PASS - byCode(fr) resolves to French (expected=Language(code=fr, englishName=French, nativeName=Fran?ais, isRtl=false) actual=Language(code=fr, englishName=French, nativeName=Fran?ais, isRtl=false))
+PASS - First-class languages include Arabic, English, French
+
+TOTAL: 38, PASSED: 38, FAILED: 0
+PASS - delays exactly match expected capped exponential sequence
+PASS - exhausted after maxAttempts
+PASS - reset clears exhaustion
+
+TOTAL: 3 PASSED: 3 FAILED: 0

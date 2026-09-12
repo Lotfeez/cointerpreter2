@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- CoInterpreter stores no audio and no OpenAI credentials on disk, so the
+     default auto-backup set (settings + local transcripts) is safe to include. -->
+<full-backup-content>
+    <exclude domain="sharedpref" path="secrets.xml" />
+</full-backup-content>
